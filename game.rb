@@ -8,7 +8,7 @@ class Game
   end
 
   def create_game()
-    loop do  
+    loop do 
       num1 = rand(1..20)
       num2 = rand(1..20)
       puts "#{@current_player.name()}: What does #{num1} plus #{num2} equal?"
@@ -19,7 +19,16 @@ class Game
         puts "Seriously? No!"
         @current_player.lose_lives();
       end
-      
+      if @current_player.current_lives() == 0
+        if @current_player == @player1
+          puts "#{@player2.name()} wins with a score of #{@player2.get_lives()}"
+        else @current_player == @player2
+          puts "#{@player1.name()} wins with a score of #{@player1.get_lives()}"
+        end
+        puts "-----Game OVER -----"
+        puts "Good buy !"
+        return
+      end
       puts "P1: #{@player1.get_lives()} vs P2: #{@player2.get_lives()}"
       puts "----- NEW TRUN -----"
       if @current_player == @player2
@@ -28,5 +37,5 @@ class Game
         @current_player = @player2
       end  
     end
-  end
+  end  
 end
