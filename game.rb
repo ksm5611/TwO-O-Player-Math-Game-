@@ -1,0 +1,1 @@
+# In this file we define the methods to help game class
