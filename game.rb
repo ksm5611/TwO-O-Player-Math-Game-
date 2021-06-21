@@ -8,7 +8,7 @@ class Game
   end
 
   def create_game()
-
+    loop do  
       num1 = rand(1..20)
       num2 = rand(1..20)
       puts "#{@current_player.name()}: What does #{num1} plus #{num2} equal?"
@@ -28,5 +28,5 @@ class Game
         @current_player = @player2
       end  
     end
-
+  end
 end
